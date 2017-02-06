@@ -21,7 +21,7 @@ def main():
 def scan_loop():
   sys.stdout.write('Ready to scan: ');
   line = sys.stdin.readline();
-  line.strip('\n');
+  line = line.strip('\n');
   logging.info(line);
 
 if __name__ == '__main__':
