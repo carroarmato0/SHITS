@@ -1,10 +1,11 @@
 import sys
 import os
-
-TAP = {}
-OUTPUT = "Test"
+import logging
 
 def main():
+
+  logging.basicConfig(filename='bar.log', level=logging.INFO, format='%(asctime)s = %(message)s')
+  logging.terminator = ""
 
   os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -15,9 +16,6 @@ def main():
     print u'\U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A';
     print;
 
-    print OUTPUT;
-    print;
-
     scan_loop();
 
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -25,15 +23,8 @@ def main():
 def scan_loop():
   sys.stdout.write('Ready to scan: ');
   line = sys.stdin.readline();
-
-  if line in TAP:
-      OUTPUT = "line not in tap";
-
-  print_tap();
-
-def print_tap():
-  for item in TAP:
-    print item;
+  line.strip('\n')
+  logging.info(line);
 
 if __name__ == '__main__':
   try:
