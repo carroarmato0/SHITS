@@ -1,6 +1,9 @@
 import sys
 import os
 import logging
+import subprocess
+
+OUTPUT = ''
 
 def main():
 
@@ -14,6 +17,9 @@ def main():
     print u'\U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A';
     print;
 
+    print OUTPUT;
+    print;
+
     scan_loop();
 
     os.system('cls' if os.name == 'nt' else 'clear');
@@ -21,8 +27,17 @@ def main():
 def scan_loop():
   sys.stdout.write('Ready to scan: ');
   line = sys.stdin.readline();
-  line = line.strip('\n');
-  logging.info(line);
+  line = line.strip(' \t\n\r')
+
+  global OUTPUT;
+
+  if line == 'stats':
+    OUTPUT = subprocess.check_output(['cat bar.log | cut -d \'=\' -f2 | sed -e \'s/^ *//\' -e \'s/ *$//\' | sort -h | uniq -c'], shell=True);
+  else:
+    OUTPUT = ''
+    logging.info(line);
+
+    #cat bar.log | cut -d '=' -f2 | sed -e 's/^ *//' -e 's/ *$//' | sort -h | uniq -c
 
 if __name__ == '__main__':
   try:
