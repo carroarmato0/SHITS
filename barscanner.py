@@ -18,7 +18,6 @@ def main():
     print;
 
     print OUTPUT;
-    print;
 
     scan_loop();
 
@@ -36,8 +35,6 @@ def scan_loop():
   else:
     OUTPUT = ''
     logging.info(line);
-
-    #cat bar.log | cut -d '=' -f2 | sed -e 's/^ *//' -e 's/ *$//' | sort -h | uniq -c
 
 if __name__ == '__main__':
   try:
