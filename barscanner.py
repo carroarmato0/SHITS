@@ -4,8 +4,7 @@ import logging
 
 def main():
 
-  logging.basicConfig(filename='bar.log', level=logging.INFO, format='%(asctime)s = %(message)s')
-  logging.terminator = ""
+  logging.basicConfig(filename='bar.log', level=logging.INFO, format='%(asctime)s - %(message)s')
 
   os.system('cls' if os.name == 'nt' else 'clear')
 
