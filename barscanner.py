@@ -4,9 +4,9 @@ import logging
 
 def main():
 
-  logging.basicConfig(filename='bar.log', level=logging.INFO, format='%(asctime)s = %(message)s')
+  logging.basicConfig(filename='bar.log', level=logging.INFO, format='%(asctime)s = %(message)s');
 
-  os.system('cls' if os.name == 'nt' else 'clear')
+  os.system('cls' if os.name == 'nt' else 'clear');
 
   while True:
     print u'\U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A \U0001F37A';
@@ -16,18 +16,18 @@ def main():
 
     scan_loop();
 
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system('cls' if os.name == 'nt' else 'clear');
 
 def scan_loop():
   sys.stdout.write('Ready to scan: ');
   line = sys.stdin.readline();
-  line.strip('\n')
+  line.strip('\n');
   logging.info(line);
 
 if __name__ == '__main__':
   try:
-    main()
+    main();
   except KeyboardInterrupt:
     # do nothing here
-    os.system('cls' if os.name == 'nt' else 'clear')
-    pass
+    os.system('cls' if os.name == 'nt' else 'clear');
+    pass;
