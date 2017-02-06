@@ -2,7 +2,7 @@ import sys
 import os
 
 TAP = {}
-OUTPUT = ""
+OUTPUT = "Test"
 
 def main():
 
@@ -16,6 +16,7 @@ def main():
     print;
 
     print OUTPUT;
+    print;
 
     scan_loop();
 
@@ -39,4 +40,5 @@ if __name__ == '__main__':
     main()
   except KeyboardInterrupt:
     # do nothing here
+    os.system('cls' if os.name == 'nt' else 'clear')
     pass
