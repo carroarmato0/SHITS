@@ -26,14 +26,16 @@ def main():
 def scan_loop():
   sys.stdout.write('Ready to scan: ');
   line = sys.stdin.readline();
-  line = line.strip(' \t\n\r')
+  line = line.strip(' \t\n\r');
 
   global OUTPUT;
 
   if line == 'stats':
     OUTPUT = subprocess.check_output(['cat bar.log | cut -d \'=\' -f2 | sed -e \'s/^ *//\' -e \'s/ *$//\' | sort -h | uniq -c'], shell=True);
+  elif line == '':
+    OUTPUT = '';
   else:
-    OUTPUT = ''
+    OUTPUT = '';
     logging.info(line);
 
 if __name__ == '__main__':
