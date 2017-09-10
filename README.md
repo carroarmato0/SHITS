@@ -10,6 +10,10 @@ Simply logs the string which is being scanned to a log file with a timestamp and
 Think about grep + wc.
 The timestamp is useful for generating graphs so we have an idea what time people consume something the most ;)
 
+You can type '?' or 'help' for a very short list of commands.
+
+Type 'stats' any time to see the current count/stats
+
 ## Screenshot
 
 ![screenshot](https://raw.githubusercontent.com/carroarmato0/SHITS/master/resources/screenshot.png)
