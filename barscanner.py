@@ -34,8 +34,8 @@ def scan_loop():
     OUTPUT = subprocess.check_output(['cat bar.log | cut -d \'=\' -f2 | sed -e \'s/^ *//\' -e \'s/ *$//\' | sort -h | uniq -c'], shell=True);
   elif line == '':
     OUTPUT = '';
-  elif line.strip().lower() in ["help", "?"]:
-    OUTPUT = '  stats: Print the current stats\n' 
+  elif line.strip().lower() in ["help", "?", "h"]:
+    OUTPUT = '  stats: Print the current stats\n'
   else:
     OUTPUT = '';
     logging.info(line);
