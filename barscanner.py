@@ -36,7 +36,9 @@ def scan_loop():
   elif line == '':
     OUTPUT = '';
   elif line.strip().lower() in ["help", "?", "h"]:
-    OUTPUT = '  stats: Print the current stats\n'
+    OUTPUT = '  stats: Print the current stats\n  quit:  Exit the program\n'
+  elif line.strip().lower() in ["q", "quit"]:
+    sys.exit();
   else:
     OUTPUT = '';
     logging.info(line);
